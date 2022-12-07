@@ -14,7 +14,7 @@
 
 	$SALT = 'dd8f1b35463aab9426d39f457417209b';
 	$SALT2 = '7c317a007d9ffa750a97779ecbfb7fb4';
-	function enchash($key) { // 20140820
+	function enchash($key) {
 		return md5(sha1($SALT).sha1($SALT2).$key);
 	}
 
@@ -29,9 +29,9 @@
 			$_SESSION['user_id'] = $member['uid'];
 		}
 	}
-	else {
+	else { // if unlogged
 		if ($_GET['mode'] != 'login') {
-			header('Location: https://modaweb.kr/plantree/login');
+			// header('Location: https://modaweb.kr/plantree/login');
 		}
 	}
 
@@ -46,6 +46,8 @@
 		<title>PlanTree</title>
 		<link rel="stylesheet" href="./css/<?=$_GET['mode']?>.css?<?=$ctime?>">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="./css/bootstrap/bootstrap.css" rel="stylesheet">
+		<script type="text/javascript" src="./js/bootstrap/bootstrap.js"></script>
 	</head>
 	<body>
 		<?php
