@@ -1,11 +1,10 @@
 /* BASIC */
-html{
-  background-image:url('https://cdn.pixabay.com/photo/2022/01/26/11/19/river-6968614_960_720.png');
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-position:center;}
 body {
   height: 100vh;
+  background-image: url('./../images/login_bg.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 a {
   color: #92badd;

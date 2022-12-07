@@ -6,7 +6,6 @@ body{
   width:100vw; min-height:100vh;
   min-width:320px;
   display:flex;
-  background:#fff;
 }
 
 /* 메뉴바 구역 */
@@ -26,16 +25,17 @@ body{
 }
 #my_img{
   width:100%;
-  max-width:200px;
 }
 #my_txt{
   word-break:break-all;
+  margin-top:5px;
 }
 
 /* 메뉴 */
 .menu ul{
   list-style: none;
   background:#fff;
+  -webkit-padding-start: 0px;
 }
 .menu li{
   padding:5px;
@@ -53,17 +53,20 @@ body{
 
 /* 메인 구역 */
 #wrapper{
-  width:80%; min-height:100%;
+  width:100%; min-height:100%;
   display: flex;
+  float:right;
   justify-content: center;
   align-items:center;
+  background-image: url(https://cdn.pixabay.com/photo/2022/06/25/13/33/landscape-7283516_960_720.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 #main{
   width:100%; height:100%;
   max-width:700px;
   background:#F7FFEB;
-  border-left:1px solid #000;
-  border-right:1px solid #000;
 }
 
 /* 타이틀 구역 */
@@ -98,49 +101,81 @@ body{
 }
 #inf_table{
   width:100%;
-  max-width:450px;
+  max-width:320px;
   border-collapse: collapse;
   text-align: center;
   background:#fff;
-  margin:20px auto;
+  margin:10px auto;
 }
 #inf_table td{
-  border: 1px solid #000;
+  border: 1px solid #E5E5E5;
   padding:3px 0;
 }
 .btn1{
   width:200px;
   height:40px;
   margin-bottom:10px;
+  border:none;
 }
 .head{
   background: #E5E5E5;
 }
 
-
-/* 병충해 정보 구역 */
-#dis_area{
-  width:100%;
-  border-bottom:1px solid #000;
-}
-#dis_table{
-  width:100%;
-  max-width:450px;
-  border-collapse: collapse;
-  text-align: center;
+/* 아이콘 선택 구역 */
+.icon_select{
+  max-width:420px;
   background:#fff;
-  margin:20px auto;
+  margin:0 auto 10px auto;
+  border:1px solid #E5E5E5;
 }
-#dis_table td{
-  border: 1px solid #000;
-  padding:3px 0;
+.icon_select p{
+  background:#E5E5E5;
+  text-align:center;
 }
+.icon_select input{
+  position:absolute;
+  z-index:999;
+}
+.icon1{background-image:url(https://ifh.cc/g/PD4dtM.png);}
+.icon2{background-image:url(https://ifh.cc/g/DGl5Wv.png);}
+.icon3{background-image:url(https://ifh.cc/g/6rV4d9.png);}
+.icon4{background-image:url(https://ifh.cc/g/qtxcps.png);}
+.icon_select input:active +.select{
+  opacity: .8;
+}
+.icon_select input:checked +.select{
+  -webkit-filter: none;
+  -moz-filter: none;
+  filter: none;
+}
+.select{
+      cursor:pointer;
+     background-size:contain;
+     background-repeat:no-repeat;
+     display:inline-block;
+     width:90px;
+     height:90px;
+     -webkit-transition: all 100ms ease-in;
+     -moz-transition: all 100ms ease-in;
+     transition: all 100ms ease-in;
+     -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+     -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+     filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.select:hover{
+     -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+     -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+     filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+.icon_select input{opacity:0;}
+.icon_select label{margin: 5px;}
+
 
 /* 타블렛 세로 */
 @media screen and (max-width:767px) {
-  #main{width:100%;}
   .item{font-size:14px;}
   #my_txt{font-size:14px;}
+  .icon_select{width:100px;}
 }
 
 /* 모바일 세로*/
@@ -148,8 +183,6 @@ body{
   .item{font-size:12px;}
   .menu li img{width:20px;}
   #my_txt{font-size:12px;}
-  #menu_bar{width:10%; border-right:none;}
-  #wrapper{width:90%;}
   .btn1{font-size:12px; height:30px; width:100px;}
   #inf_area{font-size:12px;}
   #dis_area{font-size:12px;}

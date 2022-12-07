@@ -31,7 +31,7 @@
 	}
 	else { // if unlogged
 		if ($_GET['mode'] != 'login') {
-			// header('Location: https://modaweb.kr/plantree/login');
+			// header('Location: http://srv3.modaweb.kr/plantree/login');
 		}
 	}
 
