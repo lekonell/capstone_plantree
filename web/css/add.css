@@ -103,8 +103,8 @@ body {
   	font-weight: normal;
 }
 
-/* 식물 목록 구역 */
-#list_area {
+/* 정보 구역 */
+#inf_area {
 	width: 100%;
 	border-bottom: 1px solid #000;
 }
@@ -121,45 +121,82 @@ body {
   	font-weight: normal;
 }
 
-#plant_list {
-	max-width: 320px;
-	margin: 10px auto;
-	border: 1px solid #E5E5E5;
-	background: #fff;
-}
-
-#plant_list ul {
-	column-count: 2;
-	column-rule: solid 1px #E5E5E5;
-	column-gap: 0;
-	list-style-type: none;
-	-webkit-padding-start: 0px;
-}
-
-#plant_list li {
-	text-align: center;
-	display: inline-block;
+#inf_table {
 	width: 100%;
-	margin: 10px 0;
-	padding: 10px 0;
+	max-width: 320px;
+	border-collapse: collapse;
+	text-align: center;
+	background: #fff;
+	margin: 10px auto;
 }
 
-#plant_list a {
-	display: block;
-	text-decoration: none;
-	color: #000;
+#inf_table td {
+	border: 1px solid #E5E5E5;
+	padding: 3px 0;
 }
 
-#plant_list li div {
-	padding-top: 5px;
+.btn1 {
+	width: 200px;
+	height: 40px;
+	margin-bottom: 10px;
+	border: none;
 }
 
-#plant_list img {
-	width: 80px;
+.head {
+	background: #E5E5E5;
+}
+
+/* 아이콘 선택 구역 */
+.icon_select {
+	max-width: 420px;
+	background: #fff;
+	margin: 0 auto 10px auto;
+	border: 1px solid #E5E5E5;
+}
+
+.icon_select p {
+	background: #E5E5E5;
+	text-align: center;
+}
+
+.icon_select input {
+	position: absolute;
+	z-index: 999;
+}
+
+.icon1 {
+	background-image: url(https://ifh.cc/g/PD4dtM.png);
+}
+
+.icon2 {
+	background-image: url(https://ifh.cc/g/DGl5Wv.png);
+}
+
+.icon3 {
+	background-image: url(https://ifh.cc/g/6rV4d9.png);
+}
+
+.icon4 {
+	background-image: url(https://ifh.cc/g/qtxcps.png);
+}
+
+.icon_select input:active+.select {
+	opacity: .8;
+}
+
+.icon_select input:checked+.select {
+	-webkit-filter: none;
+	-moz-filter: none;
+	filter: none;
+}
+
+.select {
 	cursor: pointer;
 	background-size: contain;
 	background-repeat: no-repeat;
 	display: inline-block;
+	width: 90px;
+	height: 90px;
 	-webkit-transition: all 100ms ease-in;
 	-moz-transition: all 100ms ease-in;
 	transition: all 100ms ease-in;
@@ -168,10 +205,18 @@ body {
 	filter: brightness(1.8) grayscale(1) opacity(.7);
 }
 
-#plant_list img:hover {
-	-webkit-filter: none;
-	-moz-filter: none;
-	filter: none;
+.select:hover {
+	-webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+	-moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+	filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+.icon_select input {
+	opacity: 0;
+}
+
+.icon_select label {
+	margin: 5px;
 }
 
 
@@ -208,13 +253,5 @@ body {
 		font-size: 12px;
 		height: 30px;
 		width: 100px;
-	}
-
-	#plant_list img {
-		width: 60px;
-	}
-
-	#plant_list {
-		max-width: 240px;
 	}
 }

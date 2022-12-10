@@ -1,0 +1,304 @@
+/* 데스크탑 */
+
+/*전체 화면*/
+*{margin:0; padding:0;}
+body{
+  width:100vw; min-height:100vh;
+  min-width:320px;
+  display:flex;
+}
+
+/* 메뉴바 구역 */
+#menu_bar{
+  width:20%; min-height:100%;
+  max-width:200px;
+  float:left;
+  background: #E5E5E5;
+  border-right:1px solid #000;
+}
+
+/* 내 아이콘 */
+#my{
+  width:100%;
+  border-bottom:1px solid #000;
+  text-align:center;
+}
+#my_img{
+  width:100%;
+}
+#my_txt{
+  word-break:break-all;
+  margin-bottom:5px;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+/* 메뉴 */
+.menu ul{
+  list-style: none;
+  background:#fff;
+  -webkit-padding-start: 0px;
+}
+.menu li{
+  padding:5px;
+  border-bottom: 1px solid #000;
+  font-size: 16px;
+  text-align:center;
+}
+.menu li img{
+  width:30px;
+}
+.menu a{
+  text-decoration: none;
+  color:#000;
+}
+
+/* 메인 구역 */
+#wrapper{
+  width:100%; min-height:100%;
+  display: flex;
+  float:right;
+  justify-content: center;
+  align-items:center;
+  background-image: url(https://cdn.pixabay.com/photo/2022/06/25/13/33/landscape-7283516_960_720.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#main{
+  width:100%; height:100%;
+  max-width:700px;
+  background:rgba(255,255,255,0.7);
+}
+.txt{
+  width: 100%;
+  display : flex;
+  justify-content : center;
+  align-items : center;
+  padding:5px 0;
+  border-bottom:1px solid #000;
+  background:#E5E5E5;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+/* 타이틀 구역 */
+#title_area{
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid #000;
+}
+#title{
+  width: 100%;
+  height: 100%;
+  display : flex;
+  justify-content : center;
+  align-items : center;
+  color: #000000;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+/* 식물 구역 */
+#plant_area{
+    width:100%;
+    border-bottom:1px solid #000;
+}
+
+/* 식물 아이콘 구역 */
+#plant_icon{
+  width:40%;
+  float:left;
+  min-height: 200px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin:15px 0;
+}
+#plant_icon img{
+  width:150px;
+  padding:10px;
+  border:3px solid #E5E5E5;
+}
+
+/* 식물 정보 구역 */
+#plant_inf{
+  min-height: 200px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin:15px 0;
+}
+.inf_list{
+  counter-reset: li;
+  list-style: none;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  width:360px;
+}
+.inf_list a{
+  position: relative;
+  display: block;
+  padding: .4em .4em .4em 2em;
+  *padding: .4em;
+  margin: .5em 0;
+  background: #ddd;
+  color: #444;
+  text-decoration: none;
+  border-radius: .3em;
+  transition: all .3s ease-out;
+}
+/*
+.inf_list a:hover{background: #eee;}
+.inf_list a:hover:before{transform: rotate(360deg);}
+*/
+.inf_list a:before{
+  content: counter(li);
+  counter-increment: li;
+  position: absolute;
+  left: -1.3em;
+  top: 50%;
+  margin-top: -1.3em;
+  background: #87ceeb;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  border: .3em solid #fff;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 2em;
+  transition: all .3s ease-out;
+}
+
+/* 물 주기 구역 */
+#water_area{
+  width:100%;
+  border-bottom:1px solid #000;
+}
+
+/* 물 주기 아이콘 */
+#water_icon{
+  width:40%;
+  min-height:200px;
+  float:left;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin:15px 0;
+}
+#water_icon ul{
+  list-style: none;
+  -webkit-padding-start: 0px;
+}
+#water_icon li{
+  font-size: 16px;
+  text-align:center;
+}
+#water_icon img{
+  width:100px;
+  padding:10px;
+  border:3px solid #E5E5E5;
+  display:block;
+}
+#water_icon img {
+	cursor: pointer;
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+	-webkit-transition: all 100ms ease-in;
+	-moz-transition: all 100ms ease-in;
+	transition: all 100ms ease-in;
+	-webkit-filter: brightness(1.2) grayscale(1) opacity(1);
+	-moz-filter: brightness(1.2) grayscale(1) opacity(1);
+	filter: brightness(1.2) grayscale(1) opacity(1);
+}
+#water_icon img:hover {
+	-webkit-filter: none;
+	-moz-filter: none;
+	filter: none;
+}
+#water_icon a{
+  text-decoration: none;
+  color:#000;
+}
+
+/* 물 주기 정보 */
+#water_inf{
+  min-height: 200px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin:15px 0;
+}
+
+/* 병해충 검사 구역 */
+#dis_area{
+  width:100%;
+  border-bottom:1px solid #000;
+}
+
+/* 병해충 사진 업로드 */
+#photo_upload {
+  width:40%;
+  min-height:150px;
+  float:left;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin:15px 0;
+}
+#photo_upload label {
+  cursor:pointer;
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+#photo_upload input[type=file] {
+  font-size: 0px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+/* 병해충 정보 */
+#dis_inf{
+  display:flex;
+  /* display: none; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:15px 0;
+}
+#dis_txt{
+  font-size: 18px;
+}
+.btn1 {
+	width: 150px;
+	height: 40px;
+  margin-top:5px;
+  border: none;
+  font-size:16px;
+}
+
+
+/* 타블렛 세로 */
+@media screen and (max-width:767px) {
+  .item{font-size:14px;}
+  #my_txt{font-size:14px;}
+  #plant_icon, #water_icon, #photo_upload{width:100%; float:none;}
+  #plant_icon, #plant_inf, #water_icon, #water_inf, #photo_upload{min-height: 0;}
+  #plant_icon img{width:100px;}
+  .inf_list{width:240px; padding-left:10px;}
+  .inf_list li{font-size: 14px; letter-spacing :-0.5px;}
+}
+
+/* 모바일 세로*/
+@media screen and (max-width:479px) {
+  .item{font-size:12px;}
+  .menu li img{width:20px;}
+  #my_txt{font-size:12px;}
+}
