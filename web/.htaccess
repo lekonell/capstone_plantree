@@ -6,8 +6,12 @@ RewriteRule ^login$ /home/plantree/html/index.php?mode=login [L,QSA]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^my/(.*)$ /home/plantree/html/index.php?mode=main3&id=$1 [L,QSA]
+RewriteRule ^plant/(.*)$ /home/plantree/html/index.php?mode=plant&id=$1 [L,QSA]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^add$ /home/plantree/html/index.php?mode=add [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^logout$ /home/plantree/html/index.php?mode=logout [L,QSA]

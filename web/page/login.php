@@ -5,15 +5,31 @@
 		<h2>Sign In</h2>
 
 		<!-- Login Form -->
-		<form>
-			<input type="text" id="id" name="login" placeholder="id" onfocus="this.placeholder=''" onblur="this.placeholder='id'">
-			<input type="password" id="password" name="login" placeholder="password" onfocus="this.placeholder=''" onblur="this.placeholder='password'">
-			<input type="submit" value="Log In">
-		</form>
-
-		<!-- Sign Up -->
-		<div id="formFooter">
-			<a class="underlineHover" href="#">Sign up?</a>
-		</div>
+		<input type="text" id="login-id" name="login" placeholder="ID" onfocus="this.placeholder=''" onblur="this.placeholder='ID'">
+		<input type="password" id="login-pw" name="login" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'">
+		<input type="submit" id="login-btn" value="Log In">
 	</div>
 </div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("input#login-btn").click(function() {
+			var id = $("input#login-id").val();
+			var pw = $("input#login-pw").val();
+
+			if (!id || !pw) {
+				_alert('안내', '아이디와 비밀번호를 입력해주세요.');
+				return false;
+			}
+
+			$.post("http://srv3.modaweb.kr/_process.php", {
+				act: "login",
+				v1: id,
+				v2: pw
+			},
+			function(data, status) {
+				_proc(data.rtn, data);
+			}, "json");
+		});
+	});
+</script>

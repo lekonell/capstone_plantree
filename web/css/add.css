@@ -11,58 +11,78 @@ body {
 	min-height: 100vh;
 	min-width: 320px;
 	display: flex;
+	background: #D1EADA;
 }
+
 
 /* 메뉴바 구역 */
-#menu_bar {
-	width: 20%;
-	min-height: 100%;
-	max-width: 200px;
-	float: left;
-	background: #E5E5E5;
-	border-right: 1px solid #000;
-}
-
-/* 내 아이콘 */
-#my {
-	width: 100%;
-	border-bottom: 1px solid #000;
-	text-align: center;
-}
-
-#my_img {
-	width: 100%;
-}
-
-#my_txt {
-	word-break: break-all;
-	margin-top: 5px;
+#menu_bar{
+	width:20%; min-height:100%;
+	max-width:200px;
+	float:left;
+  }
+  
+  /* 내 아이콘 */
+  #my{
+	width:100%;
+	text-align:center;
+  }
+  #my_img{
+	width:60%;
+	margin-top:10px;
+  }
+  #my_txt{
+	word-break:break-all;
+	margin-bottom:10px;
 	font-size: 20px;
-  	font-weight: normal;
-}
-
-/* 메뉴 */
-.menu ul {
+	font-weight: normal;
+  }
+  
+  /* 메뉴 */
+  .menu{
+	width:80%;
+	margin:0 auto;
+	height:300px;
+	background: rgb(255, 255, 255);
+	border-radius: 5%;
+	position:relative;
+  }
+  .menu ul{
 	list-style: none;
-	background: #fff;
 	-webkit-padding-start: 0px;
-}
-
-.menu li {
-	padding: 5px;
-	border-bottom: 1px solid #000;
+  }
+  .menu li{
+	padding-top:30px;
 	font-size: 16px;
-	text-align: center;
-}
-
-.menu li img {
-	width: 30px;
-}
-
-.menu a {
+	text-align:center;
+  }
+  .menu a{
 	text-decoration: none;
-	color: #000;
-}
+	color: rgb(87, 87, 87);
+	text-decoration: 1px underline rgb(87, 87, 87);
+	text-underline-offset: 5px;
+  }
+  .menu div{
+	position:absolute;
+	width:100%;
+	bottom:15px;
+	text-align: center;
+  }
+  .menu .btn-2{
+	color:rgb(39, 39, 39);
+	  background: rgba( 255, 255, 255, 0.4);
+	  border: 1px solid #E5E5E5;
+	  width:80%;
+	  height:40px;
+	  border-radius: 10%;
+	  font-size: 16px;
+	  text-align: center;
+	  cursor: pointer;
+	  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  }
+  .menu .btn-2:hover{
+	background: linear-gradient(rgba(0,0,0,0.1), rgba(255,255,255,0.1));
+  }
 
 /* 메인 구역 */
 #wrapper {
@@ -72,7 +92,6 @@ body {
 	float: right;
 	justify-content: center;
 	align-items: center;
-	background-image: url(https://cdn.pixabay.com/photo/2022/06/25/13/33/landscape-7283516_960_720.jpg);
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -82,102 +101,80 @@ body {
 	width: 100%;
 	height: 100%;
 	max-width: 700px;
-	background: rgba(255, 255, 255, 0.7);
 }
 
-/* 타이틀 구역 */
-#title_area {
-	width: 100%;
-	height: 50px;
-	border-bottom: 1px solid #000;
-}
-
-#title {
+/* 타이틀 */
+.title{
 	width: 100%;
 	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: #000000;
-	font-size: 24px;
-  	font-weight: normal;
+	color: rgb(87, 87, 87);
+	font-size: 20px;
+	font-weight: normal;
+	margin: 15px 0 60px 30px;
+	text-decoration: underline 1px;
+	text-underline-offset: 10px;
 }
 
 /* 정보 구역 */
 #inf_area {
 	width: 100%;
-	border-bottom: 1px solid #000;
 }
 
-.txt {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 5px 0;
-	border-bottom: 1px solid #000;
-	background: #E5E5E5;
-	font-size: 20px;
-  	font-weight: normal;
-}
-
+/* 별명, 식물종 입력 */
 #inf_table {
-	width: 100%;
-	max-width: 320px;
-	border-collapse: collapse;
-	text-align: center;
+	max-width: 380px;
 	background: #fff;
 	margin: 10px auto;
+	padding:20px;
+	border:1px solid #E5E5E5;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
+.input-data{
+	height:40px;
+	width:100%;
+	position:relative;
+}
+.input-data:nth-child(1){
+	margin:10px 0 30px 0;
+}
+.input-data input{
+	height:100%;
+	width:100%;
+	border:none;
+	font-size:16px;
+	border-bottom:1px solid rgb(87, 87, 87);
+}
+.input-data label{
+	position:absolute;
+	bottom:15px;
+	left:0;
+	color:rgb(49, 49, 49);
+	pointer-events: none;
+	transform: translateY(-20px);
+	font-size:15px;
+}
+input:focus{outline:none;}
 
-#inf_table td {
-	border: 1px solid #E5E5E5;
-	padding: 3px 0;
-}
-
-.btn1 {
-	width: 200px;
-	height: 40px;
-	margin-bottom: 10px;
-	border: none;
-}
-
-.head {
-	background: #E5E5E5;
-}
 
 /* 아이콘 선택 구역 */
 .icon_select {
-	max-width: 420px;
+	width: 420px;
 	background: #fff;
-	margin: 0 auto 10px auto;
+	margin: 10px auto;
 	border: 1px solid #E5E5E5;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
 
 .icon_select p {
-	background: #E5E5E5;
+	color:rgb(49, 49, 49);
+	border-bottom: 1px solid #E5E5E5;
 	text-align: center;
+	padding:5px 0;
 }
 
 .icon_select input {
 	position: absolute;
 	z-index: 999;
-}
-
-.icon1 {
-	background-image: url(https://ifh.cc/g/PD4dtM.png);
-}
-
-.icon2 {
-	background-image: url(https://ifh.cc/g/DGl5Wv.png);
-}
-
-.icon3 {
-	background-image: url(https://ifh.cc/g/6rV4d9.png);
-}
-
-.icon4 {
-	background-image: url(https://ifh.cc/g/qtxcps.png);
 }
 
 .icon_select input:active+.select {
@@ -200,9 +197,9 @@ body {
 	-webkit-transition: all 100ms ease-in;
 	-moz-transition: all 100ms ease-in;
 	transition: all 100ms ease-in;
-	-webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
-	-moz-filter: brightness(1.8) grayscale(1) opacity(.7);
-	filter: brightness(1.8) grayscale(1) opacity(.7);
+	-webkit-filter: brightness(1.2) grayscale(1) opacity(.7);
+	-moz-filter: brightness(1.2) grayscale(1) opacity(.7);
+	filter: brightness(1.2) grayscale(1) opacity(.7);
 }
 
 .select:hover {
@@ -219,6 +216,26 @@ body {
 	margin: 5px;
 }
 
+/* 버튼 */
+.btn-1 {
+	color:rgb(39, 39, 39);
+	background: rgba( 255, 255, 255, 0.4);
+	border: 1px solid #E5E5E5;
+	width:140px;
+	height:40px;
+	border-radius: 10%;
+
+	font-size: 16px;
+	text-align: center;
+
+	margin:10px 0;
+	cursor: pointer;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+.btn-1:hover{
+	background: linear-gradient(rgba(0,0,0,0.1), rgba(255,255,255,0.1));
+	border: 1px solid #E5E5E5;
+}
 
 /* 타블렛 세로 */
 @media screen and (max-width:767px) {
@@ -230,28 +247,31 @@ body {
 		font-size: 14px;
 	}
 
-	.icon_select {
-		width: 100px;
+	#inf_table{
+		width:260px;
 	}
+
+	.icon_select {
+		width: 300px;
+	}
+	.menu .btn-2{font-size:14px;}
 }
 
 /* 모바일 세로*/
 @media screen and (max-width:479px) {
 	.item {
-		font-size: 12px;
+		font-size: 10px;
 	}
-
-	.menu li img {
-		width: 20px;
-	}
-
 	#my_txt {
-		font-size: 12px;
+		font-size: 10px;
 	}
 
 	.btn1 {
-		font-size: 12px;
+		font-size: 10px;
 		height: 30px;
 		width: 100px;
 	}
+	.menu {height:200px;}
+  	.menu li{padding-top:20px;}
+  	.menu .btn-2{font-size:10px; height:25px;}
 }

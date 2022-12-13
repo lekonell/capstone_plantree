@@ -1,52 +1,83 @@
 <div id="menu_bar">
-       <div id="my">
-         <img id="my_img" src="https://cdn.pixabay.com/photo/2022/07/07/10/46/woman-7306978_960_720.jpg">
-         <h4 id="my_txt">abcd1234 님</h4>
-       </div>
-       
-       <div class="menu">
-        <ul>
-          <li><a href="/" class="item"><img src="https://cdn-icons-png.flaticon.com/512/628/628297.png"><div>나의 식물</div></a></li>
-          <li><a href="/add" class="item"><img src="https://cdn-icons-png.flaticon.com/512/628/628297.png"><div>식물 등록</div></a></li>
-        </ul>
-       </div>
-   </div>
-   
-   <div id="wrapper">
-     <div id="main">
-       <div id="title_area">
-         <h3 id="title">식물 등록</h3>
-       </div>
-       
-       <div id="inf_area">
-        <h4 class="txt">식물 정보</h4>
-         
-        <table id="inf_table">
-          <tr>
-           <td class='head'>별명</td>
-           <td><input type="text" name="name" size="10" style="width:90%; border:none;" placeholder="10자 이하"></td>
-          </tr>
-          <tr>
-           <td class='head'>식물종</td>
-           <td><input type="text" name="plant" size="20" style="width:90%; border:none;" placeholder="20자 이하"></td>
-          </tr>
-        </table>
-        
-       <div class="icon_select">
-         <p>아이콘 선택</p>
-          <input checked="checked" id="icon1" type="radio" name="icon" value="icon1"/>
-          <label class="select icon1" for="icon1"></label>
-          <input id="icon2" type="radio" name="icon" value="icon2"/>
-          <label class="select icon2"for="icon2"></label>
-         <input id="icon3" type="radio" name="icon" value="icon3"/>
-          <label class="select icon3"for="icon3"></label>
-         <input id="icon4" type="radio" name="icon" value="icon4"/>
-          <label class="select icon4"for="icon4"></label>
-       </div>
-           
-        <div style="display: flex; justify-content: center;">
-             <button class="btn1" type="button">등록</button>
-        </div>
-       </div>
-     </div>
-   </div>
+	<div id="my">
+		<img id="my_img" src="https://cdn.pixabay.com/photo/2022/07/07/10/46/woman-7306978_960_720.jpg">
+		<h4 id="my_txt"><?=$user['uid']?></h4>
+	</div>
+	
+	<div class="menu">
+		<ul>
+			<li><a href="/" class="item">My Plant</a></li>
+			<li><a href="/add" class="item">Add Plant</a></li>
+		</ul>
+		
+		<div>
+			<button onclick="location.href='http://srv3.modaweb.kr/logout';" class="btn-2">Logout</button>
+		</div>
+	</div>
+</div>
+
+<div id="wrapper">
+	<div id="main">
+		<div id="inf_area">
+			<h4 class="title">Plant Registration</h4>
+
+			<div id="inf_table">
+				<div class="input-data">
+					<input type="text" name="name">
+					<label>별명</label>
+				</div>
+
+				<div class="input-data">
+					<input type="text" name="category">
+					<label>식물종</label>
+				</div>
+			</div>
+			
+			<div class="icon_select">
+				<p>아이콘 선택</p>
+				<input checked="checked" id="icon1" type="radio" name="icon" value="1"/>
+				<label class="select icon1" for="icon1" 
+				style="background:url('http://srv3.modaweb.kr/images/icon_1.png'); background-size:90px;"></label>
+	
+				<script>
+					for(i=2; i<13; i++){
+						document.write('<input id="icon' + i + '" type="radio" name="icon" value="' + i + '"/>')
+						document.write('<label class="select icon' + i + '"for="icon' + i)
+						document.write('"style="background:url(http://srv3.modaweb.kr/images/icon_' + i)
+						document.write('.png); background-size:90px;"></label>')
+					}
+				</script>
+			</div>
+
+			<div style="display: flex; justify-content: center;">
+				<input type="submit" id="add-btn" class="btn-1" value="등록">
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("input#add-btn").click(function() {
+			var name = $('input[name="name"]').val();
+			var category = $('input[name="category"]').val();
+			var icon = $('input[name="icon"]:checked').val();
+			icon = parseInt(icon);
+
+			if (!name || !category) {
+				_alert('안내', '별명, 식물종을 입력해주세요.');
+				return false;
+			}
+
+			$.post("http://srv3.modaweb.kr/_process.php", {
+				act: "add",
+				v1: name,
+				v2: category,
+				v3: icon
+			},
+			function(data, status) {
+				_proc(data.rtn, data);
+			}, "json");
+		});
+	});
+</script>
