@@ -146,23 +146,9 @@ model.add(Activation("softmax"))
 
 model.summary()
 
-# Initialize optimizer
 opt = Adam(learning_rate=LR, decay=(LR / EPOCHS))
-
-# Compile model
 model.compile(loss="binary_crossentropy", optimizer=opt, metrics=["accuracy"])
 
-# test if CPU and GPU are visible
-tf.config.get_visible_devices()
-# [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'),
-#  PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
-
-
-###############
-# Train model #
-###############
-
-print("[INFO] Training network...")
 history = model.fit(augment.flow(x=x_train, y=y_train, batch_size=BATCH_SIZE),
                               validation_data=(x_test, y_test),
                               steps_per_epoch=(len(x_train) // BATCH_SIZE),
